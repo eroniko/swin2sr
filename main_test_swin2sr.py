@@ -86,7 +86,7 @@ def main():
     if output.ndim == 3:
         output = np.transpose(output[[2, 1, 0], :, :], (1, 2, 0))  # CHW-RGB to HCW-BGR
     output = (output * 255.0).round().astype(np.uint8)  # float32 to uint8
-    cv2.imwrite(f'{args.outputdir}/{imgname}_Swin2SR.png', output)
+    cv2.imwrite(f'{args.outputdir}/{imgname}.png', output)
 
     # evaluate psnr/ssim/psnr_b
     if img_gt is not None:
